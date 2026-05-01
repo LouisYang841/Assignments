@@ -65,10 +65,14 @@
             "id": "397537b4810b8594",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "FIT2099 Assignment 1 Design Rationale.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "FIT2099 Assignment 1 Design Rationale"
             }
           }
         ],
@@ -245,7 +249,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "203ff05b86a6dfe6",
+  "active": "397537b4810b8594",
   "lastOpenFiles": [
     "FIT2099 Design Rationales/A1/Refined/A1_REQ3_UML.pdf",
     "FIT2099 Design Rationales/A1/Refined/A1_REQ2_UML.drawio.svg",
