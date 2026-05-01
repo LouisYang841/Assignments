@@ -65,18 +65,40 @@
             "id": "397537b4810b8594",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "FIT2099 Assignment 1 Design Rationale.md",
-                "mode": "source",
-                "source": false
+                "file": "FIT2099/A1/A1_REQ1_UML.drawio.svg"
               },
-              "icon": "lucide-file",
-              "title": "FIT2099 Assignment 1 Design Rationale"
+              "icon": "lucide-image",
+              "title": "A1_REQ1_UML.drawio"
+            }
+          },
+          {
+            "id": "568ac63b622cbfb5",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "FIT2099/A1/A1_REQ2_UML.drawio.svg"
+              },
+              "icon": "lucide-image",
+              "title": "A1_REQ2_UML.drawio"
+            }
+          },
+          {
+            "id": "7cfa5d50262a22bb",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "FIT2099/A1/A1_REQ1_UML.drawio.svg"
+              },
+              "icon": "lucide-image",
+              "title": "A1_REQ1_UML.drawio"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -249,8 +271,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "397537b4810b8594",
+  "active": "203ff05b86a6dfe6",
   "lastOpenFiles": [
+    "FIT2099/A1/A1_REQ2_UML.drawio.svg",
+    "FIT2099/A1/A1_REQ3_UML.drawio.svg",
+    "FIT2099/A1/A1_REQ1_UML.drawio.svg",
+    "FIT2099/A1/FIT2099 Assignment 1 Design Rationale.md",
+    "FIT2099/Untitled/Untitled",
+    "FIT2099/Untitled.md",
+    "FIT2099/A1",
+    "FIT2099",
     "FIT2099 Design Rationales/A1/Refined/A1_REQ3_UML.pdf",
     "FIT2099 Design Rationales/A1/Refined/A1_REQ2_UML.drawio.svg",
     "FIT2099 Design Rationales/A1/Refined/A1_REQ4_UML.drawio.svg",
@@ -284,8 +314,6 @@
     "toc.md",
     "Gemini-重要-流体力学与精细结构常数的起源-流形常数.md",
     "Gemini-重要！-自发对称破缺如何发生.md",
-    "Gemini-超导体的寻找？.md",
-    "Gemini-计算验证Tc公式-随时复制粘贴.md",
-    "Gemini-老物理学家们还能等多久？.md"
+    "Gemini-超导体的寻找？.md"
   ]
 }
