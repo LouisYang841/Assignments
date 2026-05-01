@@ -89,12 +89,14 @@
             "id": "7cfa5d50262a22bb",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "FIT2099/A1/A1_REQ1_UML.drawio.svg"
+                "file": "FIT2099/A1/FIT2099 Assignment 1 Design Rationale.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "A1_REQ1_UML.drawio"
+              "icon": "lucide-file",
+              "title": "FIT2099 Assignment 1 Design Rationale"
             }
           }
         ],
@@ -271,11 +273,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "203ff05b86a6dfe6",
+  "active": "7cfa5d50262a22bb",
   "lastOpenFiles": [
+    "FIT2099/A1/A1_REQ1_UML.drawio.svg",
     "FIT2099/A1/A1_REQ2_UML.drawio.svg",
     "FIT2099/A1/A1_REQ3_UML.drawio.svg",
-    "FIT2099/A1/A1_REQ1_UML.drawio.svg",
     "FIT2099/A1/FIT2099 Assignment 1 Design Rationale.md",
     "FIT2099/Untitled/Untitled",
     "FIT2099/Untitled.md",
