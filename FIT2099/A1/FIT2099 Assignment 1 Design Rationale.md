@@ -117,4 +117,5 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Reason and OOP principle**:
 - `hasAbility()` utlized engine freatures for abstraction.
-- The multiple use logic handled within cookie
+- The multiple use logic handled within cookie itself, this adheres to the **Single Responsibility Principle**
+- Both item does not directly interaction with `SterilizationBox`, only the abstract tags, future 
