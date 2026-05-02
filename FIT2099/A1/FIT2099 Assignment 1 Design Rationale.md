@@ -232,4 +232,6 @@ Here is the trigger and consequences I choose.
 
 **Requirement**: A robust and scalable alarm system that has two consequences when triggered.
 
-**Alternative A:** The system will directly change the behavior of creatures by sweeping the map, finding all the creatures, and 
+**Alternative A:** The system will directly change the behavior of creatures by sweeping the map, finding all the hostile creatures and doors, change their state accordingly.
+
+**Alternative B:** The system will maintain  
