@@ -97,7 +97,7 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Requirement:** Puddle can be drinked directly form ground and cause effects, poison player 1 dmg/turn for 3 turns when unsterilized and heal 1 when sterilized.
 
-**Alternative A:** Add logic in puddles or worker to drink on puddle kind of ground.
+**Alternative A:** Add logic in `Puddles` or `ContractedWorker` to drink on puddle kind of ground.
 
-**Alternative B:** Utilized the Consumable interface earlier to 
+**Alternative B:** Utilized and Implement the Consumable interface earlier to handle the drinking of puddle through `ConsumeAction` and maintain the logic in `ConsumedBy()`
 
