@@ -298,4 +298,4 @@ The requirement specifically requires the system to be robust and scalable, to s
 | **LSP**   | `AlarmFloor` substitutes `Ground` transparently; `FollowBehaviour` substitutes `Behaviour` without breaking the TreeMap loop in REQ3                                                                                  |
 | **ISP**   | `AlarmTrigger` has only `monitor(Location)`; `AlarmSubscriber` has only `onAlarmTriggered()`, no implementer is forced to depend on methods it does not use                                                           |
 | **DIP**   | `AlarmSystem` and `Door` both depend on `AlarmSubscriber`; `AlarmSystem` and `AlarmFloor` both depend on `AlarmTrigger`, both high and low level modules depend on the same abstraction, avoiding direct interactions |
-<div style="text-align: right; font-size: 0.9em;">Word Count: 3996 (Table of Content is not included)</div>
+<div style="text-align: right; font-size: 0.9em;">Word Count: 3236</div>
