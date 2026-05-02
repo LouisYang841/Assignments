@@ -187,7 +187,7 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **Requirement:** 
 - This is a subsequent requirement due to previous decision in **3.1**.
-- Undead have a **Identification Friend or Foe(IFF)** feature and attacks only Workers, ignoring Slime and other creatures.
+- Undead have a **Identification Friend or Foe(IFF)** mechanism and attacks only Workers, ignoring Slime and other creatures.
 - This behavior of undead has been abstracted into `AttackNearbyBehavior` and reuseable for other creatures in future.
 
 **Alternative A:** `AttackNearbyBehavior` checks `instanceof ContractedWorker` to identify targets.
