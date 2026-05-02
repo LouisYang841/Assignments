@@ -167,7 +167,7 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 | ----- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **A** | Logic is compact and easy to understand                                                                   | The `playTurn` will become bloated when new behaviours is required. Similar code is repeating in `Slime` and `Undead`. New  behavior requires change in `playTurn()` |
 | **B** | New behavior only requires adding a new `Behavior` subclass and register it in creature's behaviour tree. | Requires creation of multiple `Behaviour` classes, increase the complexity of code structure.                                                                        |
-**Justification:** Chose B. Every behavior being a separate
+**Justification:** Chose B. 
 ### 3.4 SpawnHole
 
 **Requirement:** A hole `o` spawns an undead `Ѫ` or slime `⍾` every 20 turns.
