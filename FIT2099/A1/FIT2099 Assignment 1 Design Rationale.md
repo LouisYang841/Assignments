@@ -259,6 +259,10 @@ We acknowledge that **Alternative C** offers better composability if multiple al
 **Requirement**: A hidden floor tile that triggers an alarm when a worker stands on it, it must look the same as normal floors.
 
 **Approach:** 
-- The `AlarmTrigger` interface has method `monitor(Location)` which specifies how a trigger is triggered.
-- The `AlarmFloor` class extends `Ground` and `Implements AlarmTrigger`. The display character is passed in from constructor, set to `_` to imitate normal floors. 
-- The `AlarmFloor` takes an `AlarmSystem` in its contructor. Overrides `Ground.tick()` and call `monitor(Location)` to monitor the tile, when an `Actor` with `Faction.PLAYER` stands on it, it will call `AlarmSystem.trigger()` to trigger the alarm.
+
+The `AlarmTrigger` interface has method `monitor(Location)` which specifies how a trigger is triggered.
+
+The `AlarmFloor` :
+- Extends `Ground` and `Implements AlarmTrigger`. The display character is passed in from constructor, set to `_` to imitate normal floors. 
+- takes an `AlarmSystem` in its contructor to ensure that it is always coupled to an `AlarmSystem`.
+- Overrides `Ground.tick()` and call `monitor(Location)` to monitor the tile, when an `Actor` with `Faction.PLAYER` stands on it, it will call `AlarmSystem.trigger()` to trigger the alarm.
