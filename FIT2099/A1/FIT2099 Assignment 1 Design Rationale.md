@@ -236,4 +236,4 @@ Here is the trigger and consequences I choose.
 
 **Alternative B:** Using an `AlarmSubscriber` Interface with method `onAlarmTriggered()` as an abstraction of all entities that responding the alarm. The system will maintain a `List` of `AlarmSubscriber`s, once alarm is triggered, the `AlarmSystem` will call the `onAlarmTriggered()` of all subscribers. `Undead` and `Door` have an alternative constructor to take an `AlarmSystem` as an argument and register themselves.
 
-**Alternative C**: 
+**Alternative C**: An abstract `AlarmConsequence` class representing the consequences, and a 
