@@ -156,8 +156,7 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **General approach:** both creatures extends `Actor` classes.
 
-**Detailed approach:**
-
+**For specific behaviour:**
 **Alternative A**: write the logic procedurally inside the `playTurn()` of each creature.
 
 **Alternative B:** 
@@ -184,9 +183,16 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **OOP principles:** Adding new consumables in the future does not require changes in `ConsumeBehavior` , this adheres to the **Open-Closed Principle**.
 
-### 3.3 AttackNearbyBehavior
+### 3.3 AttackNearbyBehavior and Faction
 
+**Requirement:** 
+- This is a subsequent requirement due to previous decision in **3.1**.
+- An `AttackNearbyBehavior` for undead's player-only attacking behavior
+- Silme will consume any consumable items that worker can consume, gain or suffer the same effect as workers.
 
+**Approach:** the `ConsumeBehaviour` utilize engine method `Location.getItemsAs(Consumable.class)` to filter consumables on the ground instead of invoking `instanceof`.
+
+**OOP principles:** Adding new consumables in the future does not require changes in `ConsumeBehavior` , this adheres to the **Open-Closed Principle**.
 ### 3.4 SpawnHole
 
 **Requirement:** A hole `o` spawns an undead `Ѫ` or slime `⍾` every 20 turns.
