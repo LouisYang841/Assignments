@@ -225,4 +225,6 @@ Here is the trigger and consequences I choose.
 - All doors are locked tight, and tools, including the AccessCard (▤), cannot be used to open them for a certain number of turns.
 
 ![[A1_REQ4_UML.drawio.svg]]
+
 ---
+### AlarmSystem 
