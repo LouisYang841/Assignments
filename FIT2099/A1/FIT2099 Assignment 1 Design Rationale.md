@@ -252,7 +252,7 @@ Here is the trigger and consequences I choose.
 
 **Trade off:** Alarm logic is distributed rather than centralized, but for a system with two consequences, this distribution is still manageable.
 
-We acknowledge that **Alternative C** offers better composability if multiple alarm systems with different consequence combinations were required, since the `Consequence`s could recombine independently from responders. But the REQ4 only required single 
+We acknowledge that **Alternative C** offers better composability if multiple alarm systems with different consequence combinations were required, since the `Consequence`s could recombine independently from responders. But the REQ4 only required single alarm system with 2 consequences. Under this scope, the **Alternative B** can satisfy the requirement without introducing an extra abstraction layer for a possible requirement that does not even currently exist. 
 
 
 
