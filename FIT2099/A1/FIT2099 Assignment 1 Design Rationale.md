@@ -259,9 +259,12 @@ We acknowledge that **Alternative C** offers better composability if multiple al
 **Requirement**: A hidden floor tile that triggers an alarm when a worker stands on it, it must look the same as normal floors.
 
 **Approach:** 
-The `AlarmTrigger` interface has method `monitor(Location)` which specifies how a trigger is triggered.
+The `AlarmTrigger` interface:
+- has method `monitor(Location)` which specifies how a trigger is triggered.
 
-The `AlarmFloor` :
-- Extends `Ground` and `Implements AlarmTrigger`. The display character is passed in from constructor, set to `_` to imitate normal floors. 
-- Being package-specific and takes an `AlarmSystem` in its contructor, the only way to obtain an `AlarmFloor` instance outside the `.alarm` package is through the factory method inside `AlarmSystem`, ensuring that it is always coupled to an `AlarmSystem`.
+The `AlarmFloor` class:
+- extends `Ground` and `Implements AlarmTrigger`.
+- being package-specific and takes an `AlarmSystem` in its contructor, the only way to obtain an `AlarmFloor` instance outside the `.alarm` package is through the factory method inside `AlarmSystem`, ensuring that it is always coupled to an `AlarmSystem`.
+- The display character is passed in from constructor through factory method, set to `_` to imitate normal floors. 
 
+**Reason:** This approach intentionally coupled the `AlarmFloor` with the `AlarmSystem` to ensure sa
