@@ -158,7 +158,10 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **Alternative B:** use a `TreeMap<Integer, Behaviour>` in every creature with a behaviour. For undead, the `AttackNearbyBehavior` will be prioritzed over the `WanderBehavior`. For Slime, the `ConsumeBehaviour` will be prioritized over the `WanderBehaviour`. `playTurn()` will check the map and find the first `Behaviour` that is not yielding `null`.
 
-
+|       | Pros                                                                                                                      | Cons                                                                                                                    |
+| ----- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **A** | Logic is compact and easy to understand                                                                                   | The `playTurn` will become bloated when new behaviours is required. Similar code is repeating in `Slime` and `Undead`.  |
+| **B** | A single `ConsumeAction` handles all similar kind of action, no matter what exactly it is. Decrease code logic redundancy | Every class must implement `consume()`                                                                                  |
 
 ### 3.4 SpawnHole
 
