@@ -142,3 +142,6 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 ---
 
+## REQ3 Moon Creatures and Behaviour System 
+
+REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a new ground type that spawns the two crea
