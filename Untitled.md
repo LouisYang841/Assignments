@@ -8,6 +8,6 @@ aliases:
   - 笔记别名
   - 另一个名
 cssclass: my-style
-bibliography: citation.bib
+bibliography: "citation.bib"
 ---
 [@Zotz2009]
