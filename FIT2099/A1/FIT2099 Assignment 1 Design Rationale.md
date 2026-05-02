@@ -247,7 +247,7 @@ Here is the trigger and consequences I choose.
 **Justification**: Chose **B**. 
 - **Alternative A** directly interact with the responders, every new consequence requires modification in `AlarmSystem`, which is **against Open-Closed Principle(OCP)**. 
 - **Alternative C** centeralizes the consequence logic, but at the cost of breaking responder's encapsulation, which is **against the Single Responsibility Principle(SRP)**.
-- **Alternative B** keeps every responder responsible for their own alarm behaviour, this adheres to the **Single Responsibility Principle**. `AlarmSystem` depends only on the `AlarmSubscriber` Interface instead of interacting directly with responders, 
+- **Alternative B** keeps every responder responsible for their own alarm behaviour, this adheres to the **Single Responsibility Principle**. `AlarmSystem` relies on the `AlarmSubscriber` Interface instead of interacting directly with responders, which adheres to **Dependency Inversion Principle**. Adding new responders does not require changes in `AlarmSystem`, this adheres to the **Open-Closed Princ
 
 
 
