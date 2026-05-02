@@ -259,6 +259,6 @@ We acknowledge that **Alternative C** offers better composability if multiple al
 **Requirement**: A hidden floor tile that triggers an alarm when a worker stands on it, it must look the same as normal floors.
 
 **Approach:** 
-The `AlarmTrigger` interface has method `monitor()`
+The `AlarmTrigger` interface has method `monitor(Location)` which specifies how a trigger is triggered
 The `AlarmFloor` class extends `Ground` and `Implements AlarmTrigger`. The display character is passed in from constructor, set to `_` to imitate normal floors. 
 
