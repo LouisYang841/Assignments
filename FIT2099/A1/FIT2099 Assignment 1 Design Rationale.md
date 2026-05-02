@@ -228,6 +228,8 @@ Here is the trigger and consequences I choose.
 ![[A1_REQ4_UML.drawio.svg]]
 
 ---
-### 4.1 AlarmSystem -- Observer Pattern (Decision)
+### 4.1 AlarmSystem an AlarmSubscribers (Decision)
 
-**Requirement**: A robust and scalable alarm system that has two consequences when triggered
+**Requirement**: A robust and scalable alarm system that has two consequences when triggered.
+
+**Alternative A:** The system will directly change the behavior of creatures and map once triggered
