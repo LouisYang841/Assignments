@@ -130,4 +130,4 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Approach:** `Fire` is considered a new subclass of `Ground`. It caches the original ground with `previousGround`, and restore the orginal ground when extinguished.
 
-**OOP principle:** Fire wraps the original ground and restores it automatically, encapsulating temporary state management (Information Hiding). Keeping burn logic in a separate Ground subclass also ensures **each class has a single responsibility(SRP):** Fire handles burning, the original terrain handles being terrain.
+**OOP principle:** `Fire` introduces the inflaming of ground as a wrapper around normal `Ground`s, current `Ground` subclasses does not require any change. This adheres the 
