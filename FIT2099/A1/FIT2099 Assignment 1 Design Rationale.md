@@ -188,11 +188,11 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 **Requirement:** 
 - This is a subsequent requirement due to previous decision in **3.1**.
 - Undead attacks only Workers, ignoring Slime and other creatures.
-- This behavior of undead has been abstracted into `AttackNearbyBeha`
+- This behavior of undead has been abstracted into `AttackNearbyBehavior` and reuseable for other creatures in future.
 
-**Alternative A:**
+**Alternative A:** `AttackNearbyBehavior` checks `instanceof ContractedWorker` to identify targets.
 
-**Alternative B**:
+**Alternative B:** Use a `Faction` enum. Workers belong to `Factions.PLAYER`; Undead's `AttackNearbyBehavior` only targets actors with that faction tag.
 
 **Justification:**
 ### 3.4 SpawnHole
