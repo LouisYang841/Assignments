@@ -247,7 +247,7 @@ Here is the trigger and consequences I choose.
 **Justification**: Chose **B**. 
 
 - **Alternative A** directly interact with the responders, every new consequence requires modification in `AlarmSystem`, which is **against Open-Closed Principle**. 
-- **Alternative C** centeralizes the consequence logic, but at the cost of breaking responder's encapsulation, which is **against the Single Responsibility Principle**.
+- **Alternative C** centeralizes the consequence logic, but at the cost of breaking responder's encapsulation, which is **against the Information Hiding.
 - **Alternative B** keeps every responder responsible for their own alarm behaviour, this adheres to the **Single Responsibility Principle**. `AlarmSystem` relies on the `AlarmSubscriber` Interface instead of interacting directly with responders, which adheres to **Dependency Inversion Principle**. Adding new responders does not require changes in `AlarmSystem`, this adheres to the **Open-Closed Principle**.
 
 **Trade off:** Alarm logic is distributed rather than centralized, but for a system with two consequences, this distribution is still manageable.
