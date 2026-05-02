@@ -279,4 +279,6 @@ The `AlarmFloor` class:
 
 **Reason**: The tree map in REQ3 is exactly built for this. Behaviours are encapsulated into classes, and allows hotswap. `Behaviour` manage the specific `Action`s, Undead manage the `Behaviour` to take, while `AlarmSystem` is unrelated to the duration of creature's hunting, this adheres to the **Single Responsibility Principle**.
 
-**Note**: the `F`
+## 4.4 Lock down of Doors
+
+**R
