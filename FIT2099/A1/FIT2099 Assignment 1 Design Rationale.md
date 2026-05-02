@@ -277,7 +277,7 @@ The `AlarmFloor` class:
 
 **Approach**: in `onAlarmTriggered()`, replace the `WanderBehaviour` in hostile creature's tree map with `FollowBehaviour(target=targetWorker)`. The hostile creatures maintains an internal timer and swap back to `WanderBehaviour` when the alarm ends. The duration of huntdown is passed in through `onAlarmTriggered(target,alarmDuration)`'s alarmDuration parameter.
 
-**Reason**: The tree map in REQ3 is exactly built for this. Behaviours are encapsulated into classes, and allows hotswap. `Behaviour` manage the specific `Action`s, Undead manage the `Behaviour` to take, this adheres to the **Single Responsibility Principle**.  This also adheres to **Open-Closed Principle** where 
+**Reason**: The tree map in REQ3 is exactly built for this. Behaviours are encapsulated into classes, and allows hotswap. `Behaviour` manage the specific `Action`s, Undead manage the `Behaviour` to take, this adheres to the **Single Responsibility Principle**.  This also adheres to **Open-Closed Principle** where the change of creature's movement logic does not require a change in `Behaviour`, but this is the benefit from **design 3.1** instead of **4.3** 
 
 ## 4.4 Lock down of Doors
 
