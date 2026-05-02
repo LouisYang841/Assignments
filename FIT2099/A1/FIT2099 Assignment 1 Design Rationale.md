@@ -146,8 +146,10 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hole `o` ground type that spawns one of the two creatures every 20 turn. Both creature wanders when idle. If there is a worker nearby, the undead will attack the worker. The silme will consume any consumables it finds on the current tile.
 
+![[A1_REQ3_UML.drawio.svg]]
 ### 3.1 SpawnHole
 
 **Requirement:** A hole `o` spawns an undead `Ѫ` or slime `⍾` every 20 turns.
 
-**Approach**: `SpawnHole` extends `Ground`, maintains an internal counter and overrides `Ground.tick()` to achieve cooldown. Spawning new creatures with `Location.addActor()` 
+**Approach**: `SpawnHole` extends `Ground`, maintains an internal counter and overrides `Ground.tick()` to achieve cooldown. Spawning new creatures with `Location.addActor()`, only when the hole is not blocked by any `Actor`. The cooldown will still reset even the spawn was blocked.
+
