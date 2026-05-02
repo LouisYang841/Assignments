@@ -7,5 +7,5 @@
   "renderLinkCitations": true,
   "cslLang": "en-US",
   "cslStyleURL": "https://raw.githubusercontent.com/citation-style-language/styles/master/harvard-cite-them-right.csl",
-  "pathToBibliography": "C:\\Users\\13118\\OneDrive\\Downloads\\references.bib"
+  "pathToBibliography": "citation.bib"
 }
