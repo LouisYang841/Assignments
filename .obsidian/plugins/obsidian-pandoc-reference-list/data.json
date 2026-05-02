@@ -7,7 +7,7 @@
   "renderLinkCitations": true,
   "cslLang": "en-US",
   "cslStyleURL": "https://raw.githubusercontent.com/citation-style-language/styles/master/harvard-cite-them-right.csl",
-  "pathToBibliography": "citation.bib",
+  "pathToBibliography": "",
   "cslStylePath": "",
   "enableCiteKeyCompletion": true,
   "showCitekeyTooltips": true
