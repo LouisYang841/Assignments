@@ -2,5 +2,6 @@
   "obsidian-style-settings",
   "obsidian-git",
   "obsidian-plugin-toc",
-  "better-export-pdf"
+  "better-export-pdf",
+  "obsidian-pandoc-reference-list"
 ]
