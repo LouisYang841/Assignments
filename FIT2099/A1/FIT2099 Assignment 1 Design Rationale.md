@@ -244,7 +244,7 @@ Here is the trigger and consequences I choose.
 | B     | When there is new consequences, implement the `AlarmSubscriber` method on those responding to the alarm.                                                                                        | Alarm response logic is spread across subscriber classes rather than centralised; each responder type must remember to subscribe, a missed registration fails silently. Adding a new consequence type still requires modifying every relevant subscriber class. |
 | C     | Consequence logic is centralised in dedicated classes; different AlarmSystem instances can mix and match different consequence combinations; easy to disable or swap consequences independently | Consequence classes will directly interact with GameEntity, breaks encapsulation of the responders, creates strong coupling if without an abstraction, while further abstraction is still unnecessary under current scope.                                      |
 
-**Justification**: Chose **B**. **Alternative A** directly interact with the responders, every new consequence requires modifi 
+**Justification**: Chose **B**. **Alternative A** directly interact with the responders, every new consequence requires modification in `AlarmSystem`, which is against **Open-Closed Principle**. **Alternative C** centeralise the consequence logic, but at the cost of breaking respnding `GameEntity`'s encapsulation.
 
 
 
