@@ -1,4 +1,4 @@
-## REQ1 Design Rationale — Basic Items and Ship
+## REQ1 Basic Items and Ship
 
 REQ1 Setup the basic senario of workers and ship. Every worker spawns with an inventory limited to 50 units of weight and a Flask allow 5 consumptions. The ship is composed of wall `#`, floor `_`, and locked doors `=` . Three unique items can be found on the ship — AccessCard (unlock doors), FirstAidKit (heal with cooldown), and SterilisationBox (sterlize).
 
@@ -43,7 +43,7 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **Alternative A:** Check specific class type. Door checks `inventory.contains(AccessCard.class)`; Consumables check `inventory.contains(SterilisationBox.class)`.
 
-**Alternative B:** Items give Ability tags. AccessCard enables `OPEN_DOOR`; SterilisationBox enables `STERILISE`. Door checks `actor.hasAbility(OPEN_DOOR)`; Consumables check `actor.hasAbility(STERILISE)`.
+**Alternative B:** Items enable Ability tags. AccessCard enables `OPEN_DOOR`; SterilisationBox enables `STERILISE`. Door checks `actor.hasAbility(OPEN_DOOR)`; Consumables check `actor.hasAbility(STERILISE)`.
 
 |       | Pros                                                                                                     | Cons                                                                                                        |
 | ----- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
@@ -74,3 +74,6 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 ---
 
+## REQ2 DoT effect and more Items
+
+REQ2 introduces new Items and 
