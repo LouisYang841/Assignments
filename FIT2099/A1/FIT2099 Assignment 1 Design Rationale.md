@@ -176,14 +176,14 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **Requirement:** 
 - This is a subsequent requirement due to previous decision in **3.1**.
-- A `ConsumeBehavior` for Slime's consuming behavior
 - Silme will consume any consumable items that worker can consume, gain or suffer the same effect as workers.
+- - This behavior of slime has been abstracted into `ConsumeBehavior` and reuseable for other creatures in future.
 
 **Approach:** the `ConsumeBehaviour` utilize engine method `Location.getItemsAs(Consumable.class)` to filter consumables on the ground instead of invoking `instanceof`.
 
 **OOP principles:** Adding new consumables in the future does not require changes in `ConsumeBehavior` , this adheres to the **Open-Closed Principle**.
 
-### 3.3 AttackNearbyBehavior and Faction -- Faction Tag over `instanceof` (Decision)
+### 3.3 AttackNearbyBehavior and Faction (Decision)
 
 **Requirement:** 
 - This is a subsequent requirement due to previous decision in **3.1**.
@@ -199,7 +199,7 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 | **A** | Straightforward; no extra mechanism needed                                            | `AttackNearbyBehavior` depends on a specific class; new player-like actors need to be added to the check |
 | **B** | Every new actor can assign themselves with corresponding faction for **IFF** purpose. | Must correctly assign factions to all actors                                                             |
 
-**Justification:** Chose **B** . The `Faction` enum abstracts "Who is a player" and "Who is monster" from specific `Actor` classes like `ContractedWorker` and `Undead`, the `Behaviors` now behaves  hostility according their `Faction` settings, both `Behavior` and `Actor` relies on the `Faction` instead of eachother, this is an application of **Dependency Inversion principle**. Adding a new actor into the hostility system only requires assigning a `Faction` `Statistic` for them, this adheres to the **Open-Close principle**.
+**Justification:** Chose **B** . The `Faction` enum abstracts "Who is a player" and "Who is monster" from specific `Actor` classes like `ContractedWorker` and `Undead`, the `Behaviors` now behaves  hostility according their `Faction` settings, both `Behavior` and `Actor` relies on the `Faction` instead of eachother, this is an application of **Dependency Inversion principle**. Adding a new actor into the hostility system only requires assigning a `Faction` `Ability` for them, this adheres to the **Open-Close principle**.
 ### 3.4 SpawnHole
 
 **Requirement:** A hole `o` spawns an undead `Ѫ` or slime `⍾` every 20 turns.
