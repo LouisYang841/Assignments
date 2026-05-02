@@ -149,7 +149,12 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 ![[A1_REQ3_UML.drawio.svg]]
 
 ---
-### 3.2 SpawnHole
+
+### 3.1 Behaviour System
+
+**Requirement:** Undead attacks any worker nearby, otherwise wander. Slime consumes any `Consumables` 
+
+### 3.4 SpawnHole
 
 **Requirement:** A hole `o` spawns an undead `Ѫ` or slime `⍾` every 20 turns.
 
