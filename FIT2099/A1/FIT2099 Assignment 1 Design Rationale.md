@@ -26,10 +26,10 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **Alternative B:** Create `Consumable` interface that has method `consumedBy()` and `canBeConsumed()`. Both Flask and FirstAidKit implements it. The same kind of `ConsumeAction` handles all `Consumables` , call `consumedBy()` without refering exact class type. 
 
-|       | Pros                                                                                                     | Cons                                                             |
-| ----- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| **A** | Actions are individual; Easy to understand                                                               | Action classes will multiply fast                                |
-| **B** | new consumable items can Implement `Consumable`, and use same `ConsumeAction`, makes it easily extensive | Requires an Interface, abstraction requires effort understanding |
+|       | Pros                                                                                                     | Cons                                                                                 |
+| ----- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **A** | Actions are individual; Easy to understand                                                               | Action classes will multiply fast. Fails the purpose of the abstraction of `Action`. |
+| **B** | new consumable items can Implement `Consumable`, and use same `ConsumeAction`, makes it easily extensive | Requires an Interface, abstraction requires effort understanding                     |
 
 **Justification:** Chose B. Two consumables in REQ1 already, and we have even more in REQ2 (Apple, Cookies, Puddles). It is inefficient to write a corresponding action for every Item. `ConsumeAction` achieves Polymorphism through `Consumable.consumedBy()` . New consumables requires only implementation instad changing code of the Action which adheres to **Open-Closed Principle**. Durability of Flask and cooldown of FirstAidKit is internal detail maintained by classes their own, which adheres to the **Single Responsibility Principle**.
 
