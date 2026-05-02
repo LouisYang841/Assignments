@@ -267,4 +267,4 @@ The `AlarmFloor` class:
 - being package-specific and takes an `AlarmSystem` in its contructor, the only way to obtain an `AlarmFloor` instance outside the `.alarm` package is through the factory method inside `AlarmSystem`, ensuring that it is always coupled to an `AlarmSystem`.
 - The display character is passed in from constructor through factory method, set to `_` to imitate normal floors. 
 
-**Reason:** This approach intentionally coupled the `AlarmFloor` with the `AlarmSystem` to ensure sa
+**Reason:** This approach intentionally coupled the `AlarmFloor` with the `AlarmSystem` to ensure safety, which adheres to **Information Hiding**. The System is still open to more `AlarmTrigger`s under this 
