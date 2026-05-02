@@ -39,7 +39,7 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 - There are locked doors on the ship (`=`); AccessCard can open any doors
 - SterilisationBox can sterlize polluted items (poison → heal).
 
-**Alternative A:** Check specific class type. `Door` checks `inventory.contains(AccessCard.class)`; `Consumable`s check `inventory.contains(SterilisationBox.class)`.
+**Alternative A:** Check specific class type. Door checks `inventory.contains(AccessCard.class)`; Consumables check `inventory.contains(SterilisationBox.class)`.
 
 **Alternative B:** Items enable Ability tags. AccessCard enables `OPEN_DOOR`; SterilisationBox enables `STERILISE`. Door checks `actor.hasAbility(OPEN_DOOR)`; Consumables check `actor.hasAbility(STERILISE)`.
 
@@ -298,3 +298,4 @@ The requirement specifically requires the system to be robust and scalable, to s
 | **LSP**   | `AlarmFloor` substitutes `Ground` transparently; `FollowBehaviour` substitutes `Behaviour` without breaking the TreeMap loop in REQ3                                                                                  |
 | **ISP**   | `AlarmTrigger` has only `monitor(Location)`; `AlarmSubscriber` has only `onAlarmTriggered()`, no implementer is forced to depend on methods it does not use                                                           |
 | **DIP**   | `AlarmSystem` and `Door` both depend on `AlarmSubscriber`; `AlarmSystem` and `AlarmFloor` both depend on `AlarmTrigger`, both high and low level modules depend on the same abstraction, avoiding direct interactions |
+<div style="text-align: right; font-size: 0.9em;">Word Count: 3996 (Table of Content is not included)</div>
