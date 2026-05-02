@@ -91,4 +91,6 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Approach**: Create a `DamageOverTimeStatus` and `DamageOverTimeType` enum as constructor arguments.
 
-**Reason:** The logic inside every DoT effect are basically the same. Instead of writing them separately, It is easi
+**Reason:** The logic inside every DoT effect are all "x damage per x turn" form. Instead of handling them separately, It is clearly more efficient to abstract them into a general status differentiated with an enum.
+
+### 2.2 
