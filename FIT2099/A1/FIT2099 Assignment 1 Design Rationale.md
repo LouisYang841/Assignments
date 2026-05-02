@@ -228,8 +228,8 @@ Here is the trigger and consequences I choose.
 ![[A1_REQ4_UML.drawio.svg]]
 
 ---
-### 4.1 AlarmSystem an AlarmSubscribers (Decision)
+### 4.1 AlarmSystem and AlarmSubscribers (Decision)
 
 **Requirement**: A robust and scalable alarm system that has two consequences when triggered.
 
-**Alternative A:** The system will directly change the behavior of creatures and map once triggered
+**Alternative A:** The system will directly change the behavior of creatures by sweeping the map, finding all the creatures, and 
