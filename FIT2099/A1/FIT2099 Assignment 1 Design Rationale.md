@@ -123,4 +123,4 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Requirement:** Weights 7, with 10 units of oil. 5% chance of leaking 1 unit of oil and creating a `Fire` on the ground each turn.
 
-**Approach:** The `Lantern` overrides `GameEntity.tick(Location,Actor)`
+**Approach:** The `Lantern` overrides `GameEntity.tick(Location,Actor)` 
