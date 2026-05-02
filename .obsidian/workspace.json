@@ -157,7 +157,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 349.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "cd1741cc92c48fb4",
@@ -259,7 +260,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 454.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -273,7 +275,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "32dce6286cd6eb79",
+  "active": "7cfa5d50262a22bb",
   "lastOpenFiles": [
     "FIT2099/A1/A1_REQ1_UML.drawio.svg",
     "FIT2099/A1/A1_REQ2_UML.drawio.svg",
