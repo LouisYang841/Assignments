@@ -35,7 +35,7 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 **Justification:** Chose B. Two consumables in REQ1 already, and we have even more in REQ2 (Apple, Cookies, Puddles). It is inefficient to write a corresponding action for every Item. `ConsumeAction` achieves Polymorphism through `Consumable.consumedBy()` . New consumables requires only implementation instad changing code of the Action which adheres to **Open-Closed Principle**. Durability of Flask and cooldown of FirstAidKit is internal detail maintained by classes their own, which adheres to the **Single Responsibility Principle**.
 
 ---
-### 1.3 Door & SterilisationBox -- Ability Tag over instanceof (Decision)
+### 1.3 Door & SterilisationBox -- Ability Tag (Decision)
 
 **Requirements:**
 - There are locked doors on the ship (`=`); AccessCard can open any doors
@@ -93,6 +93,9 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Reason:** The logic inside every DoT effect are all "x damage per x turn" form. Instead of handling them separately, It is clearly more efficient to abstract them into a general status differentiated with an enum.
 
-### 2.2 Puddle -- Utilize Consumable Interface
+### 2.2 Puddle -- Utilize Consumable Interface (Decision)
 
-**Requirement:** Puddle can be drinked directly form ground and cause effects, poison player 1 dmg/turn for 3 turns when unsterilized and heal 1 when sterilized
+**Requirement:** Puddle can be drinked directly form ground and cause effects, poison player 1 dmg/turn for 3 turns when unsterilized and heal 1 when sterilized.
+
+**Alternative A:** 
+
