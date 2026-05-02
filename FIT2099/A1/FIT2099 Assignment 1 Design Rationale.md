@@ -271,4 +271,6 @@ The `AlarmFloor` class:
 - This approach intentionally coupled the `AlarmFloor` with the `AlarmSystem` to ensure safety, other classes cannot create any instance of `AlarmFloor` without an `AlarmSystem`, which adheres to **Information Hiding**. 
 - The system is still open to more various `AlarmTrigger`s under this approach, which adheres to the **Open-Closed Principle**.
 
-### 4.3  
+### 4.3  FollowBehavior and Hunting
+
+**Requirement**: When an alarm is triggered, all hostile entites will stop wandering and directly move to the worker who triggered the alarm.
