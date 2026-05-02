@@ -76,4 +76,5 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 ## REQ2 DoT effect and more Items
 
-REQ2 introduces new Items and 
+REQ2 introduces new Items, DoT mechanisms and environment Interactions. Workers can find harzardos consumables that can be sterilized with Sterilizatio:
+- Apple: Cause poisoning 
