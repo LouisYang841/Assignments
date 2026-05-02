@@ -5,5 +5,6 @@
   "renderCitations": true,
   "renderCitationsReadingMode": true,
   "renderLinkCitations": true,
-  "cslLang": "en-US"
+  "cslLang": "en-US",
+  "cslStyleURL": "https://raw.githubusercontent.com/citation-style-language/styles/master/harvard-cite-them-right.csl"
 }
