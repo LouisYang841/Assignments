@@ -176,7 +176,9 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 - A `ConsumeBehavior` for Slime's consuming behavior
 - Silme will consume any consumable items that worker can consume, gain or suffer the same effect as workers.
 
-**Alternative A:** the `ConsumeBehaviour` maintains an internal list of items that workers 
+**Alternative A:** the `ConsumeBehaviour` maintains an internal list of items that workers can consume to distinguish consumables and normal items.
+
+**Alternative B:** the `ConsumeBehaviour` utilize engine method `Location.getItemsAs(Consumable.class)` to get consumables on the ground
 
 ### 3.4 SpawnHole
 
