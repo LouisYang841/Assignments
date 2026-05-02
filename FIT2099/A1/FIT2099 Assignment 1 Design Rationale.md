@@ -60,6 +60,10 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **Approach:** Unlike `Apple` and `Cookies` the `consumeBy()` in flask never calls inventory.remove(this).
 
-**OOP principle:** Flask maintain's it's own behavior during consumption, this adheres to **Single Responsibility Principle**.
+**OOP principle:** Flask maintain's it's own behavior during consumption. We dont want `ContractedWorker` or `ConsumeAction` to handle something beyond themselves. Keeping this logic inside adheres to the **Single Responsibility Principle**.
 
 ---
+### 1.5 FirstAidKit cooldown 
+
+**Requirements:** 
+- Requirement: Cooldown only counts down
