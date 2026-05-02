@@ -238,10 +238,10 @@ Here is the trigger and consequences I choose.
 
 **Alternative C**: An abstract `AlarmConsequence` class representing the consequences, and Implemented as `LockdownConsequence` and `HuntdownConsequence` for specific alarm consequence logics. The `AlarmSystem` will register them and trigger them during the alarm.
 
-|       | Pros                                                                                      | Cons                                                                                                               |
-| ----- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| **A** | No extra interfaces or classes; logic is centralised in one place                         | AlarmSystem must know the internals of every responder type; new consequences requires modification in AlarmSystem |
-| B     | When there is new consequences, implement the `AlarmSubscriber` method on those responder |                                                                                                                    |
+|       | Pros                                                                                                     | Cons                                                                                                               |
+| ----- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **A** | No extra interfaces or classes; logic is centralised in one place                                        | AlarmSystem must know the internals of every responder type; new consequences requires modification in AlarmSystem |
+| B     | When there is new consequences, implement the `AlarmSubscriber` method on those responding to the alarm. | Interface introduces additional abstraction.                                                                       |
 
 
 
