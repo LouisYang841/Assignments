@@ -26,10 +26,10 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **Alternative B:** Create `Consumable` interface that has method `consumedBy()` and `canBeConsumed()`. Both Flask and FirstAidKit implements it. The same kind of `ConsumeAction` handles all `Consumables` , call `consumedBy()` without refering exact class type. 
 
-|       | Pros                                                                                                     | Cons                                                                                 |
-| ----- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| **A** | Actions are individual; Easy to understand                                                               | Action classes will multiply fast. Fails the purpose of the abstraction of `Action`. |
-| **B** | new consumable items can Implement `Consumable`, and use same `ConsumeAction`, makes it easily extensive | Requires an Interface, abstraction requires effort understanding                     |
+|       | Pros                                                                                                     | Cons                                                                                                                       |
+| ----- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **A** | Actions are individual; Easy to understand                                                               | Action classes will multiply fast. Fails the purpose of the abstraction of `Action`.                                       |
+| **B** | new consumable items can Implement `Consumable`, and use same `ConsumeAction`, makes it easily extensive | Each concrete class must implement its own attribute initialisation; common logic cannot be shared at the interface level. |
 
 **Justification:** Chose B. Two consumables in REQ1 already, and we have even more in REQ2 (Apple, Cookies, Puddles). It is inefficient to write a corresponding action for every Item. `ConsumeAction` achieves Polymorphism through `Consumable.consumedBy()` . New consumables requires only implementation instad changing code of the Action which adheres to **Open-Closed Principle**. Durability of Flask and cooldown of FirstAidKit is internal detail maintained by classes their own, which adheres to the **Single Responsibility Principle**.
 
@@ -169,7 +169,7 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 |       | Pros                                                                                                      | Cons                                                                                                                                                                 |
 | ----- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **A** | Logic is compact and easy to understand                                                                   | The `playTurn` will become bloated when new behaviours is required. Similar code is repeating in `Slime` and `Undead`. New  behavior requires change in `playTurn()` |
-| **B** | New behavior only requires adding a new `Behavior` subclass and register it in creature's behaviour tree. | Requires creation of multiple `Behaviour` classes, increase the complexity of code structure.                                                                        |
+| **B** | New behavior only requires adding a new `Behavior` subclass and register it in creature's behaviour tree. | The system has more moving parts; understanding the full behaviour of a creature requires tracing multiple classes.                                                  |
 **Justification:** Chose **B**. Adding new behaviors does not require changes in existing classes, this adheres to the **Open-Closed Principle(OCP)**. In contrast, **Alternative A** will require change in `playTurn` of the creatures, this is against **OCP**. This also provided the extension point for REQ4 to interact by swapping behavior tree items to actively control behavior.
 
 ### 3.2 ConsumeBehavior
