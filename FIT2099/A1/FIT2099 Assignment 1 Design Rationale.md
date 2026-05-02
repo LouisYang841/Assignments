@@ -287,12 +287,13 @@ The `AlarmFloor` class:
 
 **Reason:** `lockdown(duration)` is designed as a capability the `Door` possesses, the alarm merely invokes it. `Door` manages its own lockdown state and recovery internally, this adheres to the **Single Responsibility Principle**.
 
-## REQ4 SOLID Summary
+### REQ4 SOLID Summary
 
-| Principle | Application in REQ4                                                                                                                                                                    |
-| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **SRP**   | `AlarmSystem` only dispatches notifications; `Door` manages its own lockdown; `Undead` manages its own behaviour swap; `AlarmFloor` only detects and triggers                          |
-| **OCP**   | New trigger types implement `AlarmTrigger`; new subscribers implement `AlarmSubscriber`, neither requires changes to `AlarmSystem` or existing subscribers.                            |
-| **LSP**   | `AlarmFloor` substitutes `Ground` transparently; `FollowBehaviour` substitutes `Behaviour` without breaking the TreeMap loop in REQ3                                                   |
-| **ISP**   | `AlarmTrigger` has only `monitor(Location)`; `AlarmSubscriber` has only `onAlarmTriggered()` , no implementer is forced to implement empty methods                                     |
-| **DIP**   | `AlarmSystem` and `Door` both depend on `AlarmSubscriber`; `AlarmSystem` and `AlarmFloor` both depend on `AlarmTrigger` — high-level and low-level modules both depend on abstractions |
+The requirement specifically requires the system to be robust and 
+
+| Principle | Application in REQ4                                                                                                                                                                                                                   |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **SRP**   | `AlarmSystem` only dispatches notifications; `Door` manages its own lockdown; `Undead` manages its own behaviour swap; `AlarmFloo                                                                                                     |
+| **OCP**   | New trigger types implement `AlarmTrigger`; new subscribers implement `AlarmSubscriber`, neither requires changes                                                                                                                     |
+| **LSP**   | `AlarmFloor` substitutes `Ground` transparently; `FollowBehaviour` substitut                                                                                                                                                          |
+| **ISP**   | `AlarmTrigger` has only `monitor(Location)`; `AlarmSubscriber` has only `onA                                                                                      `AlarmSystem` and `Door` both depend on `AlarmSubscriber`; `AlarmSystem` and `AlarmFloor` both depend on `AlarmTrigger`, both high and low level modules depends on the same abstraction, avoiding direct interactions. n the  n the  n the  n the  n the  n the  n the  n the  n the  n the  n the  n the  n the  n the  |
