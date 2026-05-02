@@ -271,4 +271,4 @@ The `AlarmFloor` class:
 - This approach intentionally coupled the `AlarmFloor` with the `AlarmSystem` to ensure safety, other classes cannot create any instance of `AlarmFloor` without an `AlarmSystem`, which adheres to **Information Hiding**. 
 - The system is still open to more various `AlarmTrigger`s under this approach, which adheres to the **Open-Closed Principle**.
 
-
+### 4.3  
