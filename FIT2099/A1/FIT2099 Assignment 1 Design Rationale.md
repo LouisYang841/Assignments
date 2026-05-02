@@ -268,7 +268,7 @@ The `AlarmFloor` class:
 - The display character is passed in from constructor through factory method, set to `_` to imitate normal floors. 
 
 **Reason:** 
-- This approach intentionally coupled the `AlarmFloor` with the `AlarmSystem` to ensure safety, which adheres to **Information Hiding**. 
+- This approach intentionally coupled the `AlarmFloor` with the `AlarmSystem` to ensure safety, other classes cannot create any instance of `AlarmFloor` without an `AlarmSystem`, which adheres to **Information Hiding**. 
 - The system is still open to more various `AlarmTrigger`s under this approach, which adheres to the **Open-Closed Principle**.
 
 
