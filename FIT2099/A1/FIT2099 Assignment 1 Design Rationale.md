@@ -260,6 +260,4 @@ We acknowledge that **Alternative C** offers better composability if multiple al
 
 **Approach:** 
 - The `AlarmTrigger` interface has method `monitor(Location)` which specifies how a trigger is triggered.
-- The `AlarmFloor` class extends `Ground` and `Implements AlarmTrigger`. The display character is passed in from constructor, set to `_` to imitate normal floors. 
-
-
+- The `AlarmFloor` class extends `Ground` and `Implements AlarmTrigger`. The display character is passed in from constructor, set to `_` to imitate normal floors. Overrides `Ground.tick()` and call `monitor(Location)` to monitor the tile, when an ````
