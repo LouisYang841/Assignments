@@ -154,7 +154,9 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **Requirement:** Undead attacks any worker nearby. Slime consumes any consumables on ground. Both creatrues will wander when idle.
 
-G
+**General approach:** both creatures extends `Actor` classes.
+
+**Detailed approach:**
 
 **Alternative A**: write the logic procedurally inside the `playTurn()` of each creature.
 
