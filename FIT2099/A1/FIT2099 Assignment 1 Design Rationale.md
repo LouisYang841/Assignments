@@ -101,7 +101,8 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Alternative B:** Utilized and Implement the Consumable interface earlier to handle the drinking of puddle through `ConsumeAction` and maintain the logic in `ConsumedBy()`
 
-|       | Pros                                                                                                        | Cons                                                   |
-| ----- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| **A** | Item and Puddle is handled separately and avoid interference                                                | Redundancy in logics since the logic is being similar. |
-| **B** | A single `ConsumeAction` handles all similar kind of action, no matter what exactly it is. Decrease code re | Every class must implement `consume()`                 |
+|       | Pros                                                                                                                      | Cons                                                   |
+| ----- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| **A** | Item and Puddle is handled separately and avoid interference                                                              | Redundancy in logics since the logic is being similar. |
+| **B** | A single `ConsumeAction` handles all similar kind of action, no matter what exactly it is. Decrease code logic redundancy | Every class must implement `consume()`                 |
+**Justification**: Chose B. `Consumable` interface has already been estabilished in REQ1. `ConsumeAction` handles all `Consumable` things, no
