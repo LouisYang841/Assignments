@@ -199,7 +199,7 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 | **A** | Straightforward; no extra mechanism needed                                            | `AttackNearbyBehavior` depends on a specific class; new player-like actors need to be added to the check |
 | **B** | Every new actor can assign themselves with corresponding faction for **IFF** purpose. | Must correctly assign factions to all actors                                                             |
 
-**Justification:**
+**Justification:** Chose **B** . The `Faction` enum abstracts "Who is a player" and "Who is monster" from specific `Actor` classes like 
 ### 3.4 SpawnHole
 
 **Requirement:** A hole `o` spawns an undead `Ѫ` or slime `⍾` every 20 turns.
