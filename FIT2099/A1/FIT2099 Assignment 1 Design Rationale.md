@@ -91,7 +91,7 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Approach**: Create a `DamageOverTimeStatus` and `DamageOverTimeType` enum as constructor arguments.
 
-**Reason:** The logic inside every DoT effect are all "x damage per x turn" form. Instead of handling them separately, It is clearly more efficient to abstract them into a general status differentiated with an enum.
+**Reason:** The logic inside every DoT effect are all "x damage per x turn" form. Instead of handling them separately, It is clearly more efficient to abstract them into a general status differentiated with an enum. This is 
 
 ### 2.2 Puddle -- Utilize Consumable Interface (Decision)
 
@@ -109,4 +109,4 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 ### 2.3 Apple & Cookies -- Sterilization Ability check
 
-
+**Requirement:
