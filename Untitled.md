@@ -10,5 +10,3 @@ aliases:
 cssclass: my-style
 bibliography: C:\Users\13118\OneDrive\Downloads\references.bib
 ---
-[@benzing1990]
-[@]

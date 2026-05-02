@@ -1,6 +1,6 @@
 {
   "pathToPandoc": "D:\\Program Files\\Pandoc\\pandoc.exe",
-  "tooltipDelay": 400,
+  "tooltipDelay": 0,
   "zoteroGroups": [],
   "renderCitations": true,
   "renderCitationsReadingMode": true,
