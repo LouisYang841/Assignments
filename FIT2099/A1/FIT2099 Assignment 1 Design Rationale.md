@@ -98,10 +98,10 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Alternative B:** Utilized and Implement the Consumable interface earlier to handle the drinking of puddle through `ConsumeAction` and maintain the logic in `ConsumedBy()`
 
-|       | Pros                                                                                                                      | Cons                                                   |
-| ----- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| **A** | Item and Puddle is handled separately and avoid interference                                                              | Redundancy in logics since the logic is being similar. |
-| **B** | A single `ConsumeAction` handles all similar kind of action, no matter what exactly it is. Decrease code logic redundancy | There lacks a way to distinguish if a `Consum`         |
+|       | Pros                                                                                                                      | Cons                                                                         |
+| ----- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **A** | Item and Puddle is handled separately and avoid interference                                                              | Redundancy in logics since the logic is being similar.                       |
+| **B** | A single `ConsumeAction` handles all similar kind of action, no matter what exactly it is. Decrease code logic redundancy | There lacks a way to distinguish if a `Consumable` is an `Item` or `Ground`. |
 **Justification**: Chose B. `Consumable` interface has already been estabilished in REQ1. This modification is not happening in any of previous code, which adheres to **Open-Closed Principle**. `ConsumeAction` handles all `Consumable` things, no matter what exactly it is, this is a kind of **Polymorphism** and gives better extensibility.
 
 ### 2.3 Apple & Cookies -- Sterilization Ability check
@@ -158,11 +158,13 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **Alternative B:** use a `TreeMap<Integer, Behaviour>` in every creature with a behaviour. For undead, the `AttackNearbyBehavior` will be prioritzed over the `WanderBehavior`. For Slime, the `ConsumeBehaviour` will be prioritized over the `WanderBehaviour`. `playTurn()` will check the map and find the first `Behaviour` that is not yielding `null`.
 
-|       | Pros                                                                                        | Cons                                                                                                                                                                 |
-| ----- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **A** | Logic is compact and easy to understand                                                     | The `playTurn` will become bloated when new behaviours is required. Similar code is repeating in `Slime` and `Undead`. New  behavior requires change in `playTurn()` |
-| **B** | New behavior only requires adding a new class and register it in creature's behaviour tree. | Requires understanding of abstract structure, new developers need more time to understand.                                                                           |
-
+|       | Pros                                                                                                      | Cons                                                                                                                                                                 |
+| ----- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A** | Logic is compact and easy to understand                                                                   | The `playTurn` will become bloated when new behaviours is required. Similar code is repeating in `Slime` and `Undead`. New  behavior requires change in `playTurn()` |
+| **B** | New behavior only requires adding a new `Behavior` subclass and register it in creature's behaviour tree. | Requires understanding of abstract structure, new developers need more time to understand.                                                                           |
+**
+Justification: Chose B. `playTurn` simply checks the ``
+**
 ### 3.4 SpawnHole
 
 **Requirement:** A hole `o` spawns an undead `Ѫ` or slime `⍾` every 20 turns.
