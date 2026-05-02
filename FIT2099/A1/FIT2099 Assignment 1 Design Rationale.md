@@ -234,4 +234,4 @@ Here is the trigger and consequences I choose.
 
 **Alternative A:** The system will directly change the behavior of creatures by sweeping the map, finding all the hostile creatures and doors, change their state accordingly.
 
-**Alternative B:** Using an`AlarmSubscriber` The system will maintain a 
+**Alternative B:** Using an `AlarmSubscriber` Interface as an abstraction of all entities that responding the alarm. The system will maintain a `List` of `AlarmSubscriber`s, to 
