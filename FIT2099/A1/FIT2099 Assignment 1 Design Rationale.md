@@ -105,4 +105,4 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 | ----- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
 | **A** | Item and Puddle is handled separately and avoid interference                                                              | Redundancy in logics since the logic is being similar. |
 | **B** | A single `ConsumeAction` handles all similar kind of action, no matter what exactly it is. Decrease code logic redundancy | Every class must implement `consume()`                 |
-**Justification**: Chose B. `Consumable` interface has already been estabilished in REQ1. `ConsumeAction` handles all `Consumable` things, no
+**Justification**: Chose B. `Consumable` interface has already been estabilished in REQ1. This modification is not happening in any of previous code, which adheres to **Open-Closed Principle**. `ConsumeAction` handles all `Consumable` things, no matter what exactly it is, this adheres to the **Dependency Inversion Principle** where the abstraction is adapted fi.
