@@ -285,4 +285,4 @@ The `AlarmFloor` class:
 
 **Approach:** The `Door` maintains a `lockdownDuration` counter. When the alarm triggers, `onAlarmTriggered()` sets this counter and forces the door locked. `tick()` decrements it each turn, the door automatically returns to normal when the counter reaches zero. During lockdown, `allowableActions()` hides the `UnlockDoorAction`, so `AccessCard` cannot bypass the lock.
 
-**Reason:** Lockdown is a capability the Door already possesses — the alarm merely invokes it. Door manages its own lockdown state and recovery internally, this adheres to the **Single Responsibility Principle**.
+**Reason:** `lockdown(duration)` is designed as a capability the `Door` possesses, the alarm merely invokes it. `Door` manages its own lockdown state and recovery internally, this adheres to the **Single Responsibility Principle**.
