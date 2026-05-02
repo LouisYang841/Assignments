@@ -113,4 +113,4 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 - Apple: weights 1, poison player 1 dmg/turn for 5 turns when unsterilized, heal 3 hp when sterilized. Removed after consumption.
 - Cookies: weights 2, with five pieces inside, each one -1 max hp when unsterilized, heal 1 when sterilized. Removed after all consumed.
 
-**Approach:** Both Items Implements `Consumale`
+**Approach:** Both Items Implements `Consumale` and check if the actor consuming it have the ability of Sterilization. 
