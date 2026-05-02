@@ -286,3 +286,13 @@ The `AlarmFloor` class:
 **Approach:** The `Door` maintains a `lockdownDuration` counter. When the alarm triggers, `onAlarmTriggered()` sets this counter and forces the door locked. `tick()` decrements it each turn, the door automatically returns to normal when the counter reaches zero. During lockdown, `allowableActions()` hides the `UnlockDoorAction`, so `AccessCard` cannot bypass the lock.
 
 **Reason:** `lockdown(duration)` is designed as a capability the `Door` possesses, the alarm merely invokes it. `Door` manages its own lockdown state and recovery internally, this adheres to the **Single Responsibility Principle**.
+
+## REQ4 SOLID Summary
+
+| Principle | Application in REQ4                                                                                                                                           |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **SRP**   | `AlarmSystem` only dispatches notifications; `Door` manages its own lockdown; `Undead` manages its own behaviour swap; `AlarmFloor` only detects and triggers |
+| **OCP**   | New trigger types implement `AlarmTrigger`; new subscribers implement `AlarmSubscriber`, neither requires changes to `AlarmSystem` or existing responders     |
+| **LSP**   | `AlarmFloor` substitutes `Ground` transparently; `FollowBehaviour` substitutes `Behaviour` without breaking the TreeMap loop in REQ3                          |
+| **ISP**   | `AlarmTrigger` has only `monitor(Location)`; `AlarmSubscriber` has only `onAlarmTriggered()` ,no implementer is forced to depend on unused methods            |
+| **DIP**   | `AlarmSystem` depends on `AlarmTrigger` and `AlarmSubscriber` interfaces, not on concrete `AlarmFloor`, `Door`, or `Undead` classes                           |
