@@ -66,4 +66,11 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 ### 1.5 FirstAidKit cooldown 
 
 **Requirements:** 
-- Requirement: Cooldown only counts down
+- Requirement: Cooldown only counts down when carried
+
+**Approach:** FirstAidKit overrides `tick(Location,Actor)`, this method is only called when the `Item` is inside an `Actor`'s inventory.
+
+**Why:** This utilized provided engine mechanism.
+
+---
+
