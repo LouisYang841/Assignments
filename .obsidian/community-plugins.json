@@ -3,5 +3,6 @@
   "obsidian-git",
   "obsidian-plugin-toc",
   "better-export-pdf",
-  "obsidian-pandoc-reference-list"
+  "obsidian-pandoc-reference-list",
+  "obsidian-admonition"
 ]
