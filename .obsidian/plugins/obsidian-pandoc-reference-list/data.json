@@ -9,5 +9,6 @@
   "pathToBibliography": "",
   "cslStylePath": "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl",
   "enableCiteKeyCompletion": true,
-  "showCitekeyTooltips": true
+  "showCitekeyTooltips": true,
+  "pullFromZotero": true
 }
