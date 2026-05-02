@@ -8,5 +8,5 @@ aliases:
   - 笔记别名
   - 另一个名
 cssclass: my-style
-bibliography: C:\Users\13118\OneDrive\Downloads\references.bib
+bibliography:
 ---
