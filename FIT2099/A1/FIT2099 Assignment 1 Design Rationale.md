@@ -156,14 +156,14 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **Alternative A**: write the logic procedurally inside the `playTurn()` of each creature.
 
-**Alternative B:** use a `TreeMap<Integer, Behaviour>` in every creature with a behaviour. For undead, the `AttackNearbyBehavior` will be prioritzed over the `WanderBehavior`. For Slime, the `ConsumeBehaviour` will be prioritized over the `WanderBehaviour`. `playTurn()` will check the map and find the first `Behaviour` that is not yielding `null`.
+**Alternative B:** use a `TreeMap<Integer, Behaviour>` in every creature with a behaviour. Create subclasses `Behavior` For undead, the `AttackNearbyBehavior` will be prioritzed over the `WanderBehavior`. For Slime, the `ConsumeBehaviour` will be prioritized over the `WanderBehaviour`. `playTurn()` will check the map and find the first `Behaviour` that is not yielding `null`.
 
 |       | Pros                                                                                                      | Cons                                                                                                                                                                 |
 | ----- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **A** | Logic is compact and easy to understand                                                                   | The `playTurn` will become bloated when new behaviours is required. Similar code is repeating in `Slime` and `Undead`. New  behavior requires change in `playTurn()` |
 | **B** | New behavior only requires adding a new `Behavior` subclass and register it in creature's behaviour tree. | Requires understanding of abstract structure, new developers need more time to understand.                                                                           |
 **
-Justification: Chose B. `playTurn` simply checks the ``
+Justification: Chose B. 
 **
 ### 3.4 SpawnHole
 
