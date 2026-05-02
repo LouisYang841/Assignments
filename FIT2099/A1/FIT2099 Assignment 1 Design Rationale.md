@@ -275,10 +275,10 @@ The `AlarmFloor` class:
 
 **Requirement**: When an alarm is triggered, all hostile entites will stop wandering and directly move to the worker who triggered the alarm.
 
-**Approach**: in `onAlarmTrigger()`, replace the `WanderBehaviour` in hostile creature's tree map with `FollowBehaviour(target=targetWorker)`. The hostile creatures maintains an internal timer and swap back to `WanderBehaviour` when the alarm ends.
+**Approach**: in `onAlarmTrigger()`, replace the `WanderBehaviour` in hostile creature's tree map with `FollowBehaviour(target=targetWorker)`. The hostile creatures maintains an internal timer and swap back to `WanderBehaviour` when the alarm ends. The duration of huntdown is passed in through `onAlarmTrigger`
 
 **Reason**: The tree map in REQ3 is exactly built for this. Behaviours are encapsulated into classes, and allows hotswap. `Behaviour` manage the specific `Action`s, Undead manage the `Behaviour` to take, while `AlarmSystem` is unrelated to the duration of creature's hunting, this adheres to the **Single Responsibility Principle**.
 
 ## 4.4 Lock down of Doors
 
-**R
+**Requirement**: When an alarm is triggered, all doors are locked down for certain duration.
