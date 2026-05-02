@@ -136,4 +136,9 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Requirement:** `FloppyDisk` weights 1; `CRTMonitor` weights 30. Both Items has no specific use except being scrap that can be carried.
 
-**Approach:** Both extends `Item`, utilize `Statistics`
+**Approach:** Both extends `Item`, utilize `GameEntity.addNewStatistic()` with `ItemStatistics.WEIGHT` to register their weight.
+
+**Reason:** Utilized existing engine feature.
+
+---
+
