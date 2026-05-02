@@ -4,8 +4,8 @@ author: Jiaxuan Yang
 affiliation: School of Science, Monash University Malaysia
 email: jyan0226@student.monash.edu
 date: 2026-05-03
+bibliography: references.bib
 ---
-
 
 ------------------------------------------------------------------------
 
