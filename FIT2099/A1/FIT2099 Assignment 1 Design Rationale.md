@@ -213,4 +213,7 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 ## REQ4 Facility Alarm System
 
-REQ4 (HD) introduces an alarm system on the moon and require one of the trigger
+REQ4 (HD) introduces an alarm system on the moon and require one custom trigger and two consequences.
+Here is the trigger and consequences I choose.
+
+Trigger: 
