@@ -279,11 +279,10 @@ The `AlarmFloor` class:
 
 **Reason**: The tree map in REQ3 is exactly built for this. Behaviours are encapsulated into classes, and allows hotswap. `Behaviour` manage the specific `Action`s, Undead manage the `Behaviour` to take, this adheres to the **Single Responsibility Principle**.  This also adheres to **Open-Closed Principle** where the change of creature's movement logic does not require a change in `Behaviour`, but this is the benefit from **Decision 3.1** instead of the current designing. 
 
-## 4.4 Lock down of Doors
+### 4.4 Lockdown of Doors
 
-**Requirement**: When an alarm is triggered, all doors are locked down for certain duration.
+**Requirement:** When an alarm is triggered, all doors lock down for a set duration. `AccessCard` cannot override the lockdown.
 
-**Approach**: the `Door` maintains a `lockdownDuration` counter that manage it's lockdown status.
+**Approach:** The `Door` maintains a `lockdownDuration` counter. When the alarm triggers, `onAlarmTriggered()` sets this counter and forces the door locked. `tick()` decrements it each turn, the door automatically returns to normal when the counter reaches zero. During lockdown, `allowableActions()` hides the `UnlockDoorAction`, so `AccessCard` cannot bypass the lock.
 
-
-**Reason:** 
+**Reason:** Lockdown is a capability the Door already possesses — the alarm merely invokes it. Door manages its own lockdown state and recovery internally, this adheres to the **Single Responsibility Principle**.
