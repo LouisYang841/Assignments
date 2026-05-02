@@ -167,7 +167,7 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 | ----- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **A** | Logic is compact and easy to understand                                                                   | The `playTurn` will become bloated when new behaviours is required. Similar code is repeating in `Slime` and `Undead`. New  behavior requires change in `playTurn()` |
 | **B** | New behavior only requires adding a new `Behavior` subclass and register it in creature's behaviour tree. | Requires creation of multiple `Behaviour` classes, increase the complexity of code structure.                                                                        |
-**Justification:** Chose **B**. Adding new behaviors does not require changes in existing classes, this adheres to the **Open-Closed Principle(OCP)**. In contrast, **Alternative A** will require change in `playTurn` of the creatures, this is against **OCP**. This also provided the extension point for REQ4 to plug-in by swapping behavior tree items to actively control behavior.
+**Justification:** Chose **B**. Adding new behaviors does not require changes in existing classes, this adheres to the **Open-Closed Principle(OCP)**. In contrast, **Alternative A** will require change in `playTurn` of the creatures, this is against **OCP**. This also provided the extension point for REQ4 to interact by swapping behavior tree items to actively control behavior.
 
 
 ### 3.4 SpawnHole
