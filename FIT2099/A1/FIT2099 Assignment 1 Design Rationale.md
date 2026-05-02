@@ -16,7 +16,6 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 | utilized engine mechanise: `PickUpAction` automatically handles the situation where `add()` returning `false` and display the Error message; Rules are encapsulated within its own class | additional subclasses created |
 **OOP principle:** `WeightLimitedInventory` is a specific kind of `Inventory` that can be handled as  an `Inventory` , which adheres **Liskov Substituion Principle**
 
----
 ### 1.2 Flask and FirstAidKit -- Consumable Interface (Decision)
 
 **Requirements:**
@@ -34,7 +33,6 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **Justification:** Chose B. Two consumables in REQ1 already, and we have even more in REQ2 (Apple, Cookies, Puddles). It is inefficient to write a corresponding action for every Item. `ConsumeAction` achieves Polymorphism through `Consumable.consumedBy()` . New consumables requires only implementation instad changing code of the Action which adheres to **Open-Closed Principle**. Durability of Flask and cooldown of FirstAidKit is internal detail maintained by classes their own, which adheres to the **Single Responsibility Principle**.
 
----
 ### 1.3 Door & SterilisationBox -- Ability Tag (Decision)
 
 **Requirements:**
@@ -52,7 +50,6 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **Justification:** Choose B. In accordance to **Dependency Inversion Principle**, Door should not rely on specific kind of key to unlock it. Same applies to SterilisationBox: Consumables that can be Sterlized checks `hasAbility(STERILISE)` and does not care the specific item providing such ability. Adding new items with similar or same ability does not require change in current class code, this adheres **Open-Closed Principle.**
 
----
 ### 1.4 Flask consumption behavior
 
 **Requirements:** 
@@ -62,7 +59,6 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **OOP principle:** Flask maintain's it's own behavior during consumption. We dont want `ContractedWorker` or `ConsumeAction` to handle something beyond themselves. Keeping this logic inside adheres to the **Single Responsibility Principle**.
 
----
 ### 1.5 FirstAidKit cooldown 
 
 **Requirements:** 
@@ -73,6 +69,7 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 **Why:** This utilized provided engine mechanism.
 
 ---
+
 
 ## REQ2 DoT effect, Environment Interaction and more Items
 
@@ -125,4 +122,8 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Approach:** The `Lantern` overrides `Item.tick(Location,Actor)` , spawn fire when it leaks and decrease the fuel counter by 1. The fuel and the probability of leaking is written as constructor parameters which allows further customization.
 
-**OOP principle**: The leak's logic is handled inside lantern, the Item manage its own logic, 
+**OOP principle**: The leak's logic is handled inside lantern, the Item manage its own logic, this adheres to the **Single Responsibility Principle**. 
+
+### Fire -- Wrapper
+
+R
