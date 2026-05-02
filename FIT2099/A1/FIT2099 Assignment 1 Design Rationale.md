@@ -216,4 +216,13 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 REQ4 (HD) introduces an alarm system on the moon and require one custom trigger and two consequences.
 Here is the trigger and consequences I choose.
 
-Trigger: 
+**Trigger:** 
+- A new type of floor or tile that silently triggers the alarm as soon as a worker steps onto it.
+
+**Consequences:** 
+- All hostile entities (like the Undead) immediately override their standard wandering behaviour. They must move directly toward the worker, regardless of their proximity or distance on the map.
+	
+- All doors are locked tight, and tools, including the AccessCard (▤), cannot be used to open them for a certain number of turns.
+
+![[A1_REQ4_UML.drawio.svg]]
+---
