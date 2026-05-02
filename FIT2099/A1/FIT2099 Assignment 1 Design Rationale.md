@@ -289,7 +289,7 @@ The `AlarmFloor` class:
 
 ### REQ4 SOLID Summary
 
-The requirement specifically requires the system to be robust and 
+The requirement specifically requires the system to be robust and scalable, to show that my implementation is so, I summarized the adhere of S.O.L.I.D. principles in this alarm system here. 
 
 | Principle | Application in REQ4                                                                                                                                                                                                                   |
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
