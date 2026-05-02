@@ -144,4 +144,8 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 ## REQ3 Moon Creatures and Behaviour System 
 
-REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a new ground type that spawns one of the two creatures every 20 turn. Both creature wanders when 
+REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a new ground type that spawns one of the two creatures every 20 turn. Both creature wanders when idle. If there is a worker nearby, the undead will attack the worker. The silme will consume any consumables it finds on the current tile.
+
+### 3.1 SpawnHole
+
+**Requiremen**
