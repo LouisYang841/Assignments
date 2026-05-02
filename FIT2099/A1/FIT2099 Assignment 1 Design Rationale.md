@@ -11,9 +11,10 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **Solution:** Creates `WeightLimitedInventory` which extends `Inventory`, override `add()` to return `false` when overweighted. Items without `WEIGHT` will tirgger `IllegalArgumentException` — all Items that added to the `WeightLimitedInventory` must declare a weight.
 
-| Pros                                                                                                                                                                                | Cons                          |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| utilized engine mechanise: `PickUpAction` automatically handles the situation where `add()` returning `false` and display the Error message; Rules are confined with its own Class. | additional subclasses created |
+| Pros                                                                                                                                          | Cons                          |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| utilized engine mechanise: `PickUpAction` automatically handles the situation where `add()` returning `false` and display the Error message;  | additional subclasses created |
+**OOP principle:** Rules are confined with its own Class which is an application of Single Responsibility Principle.
 
 ---
 ### 1.2 Flask and FirstAidKit — Consumable Interface (Decision)
@@ -52,9 +53,11 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 **Justification:** Choose B. In accordance to **Dependency Inversion Principle**, Door should not rely on specific kind of key to unlock it. Same applies to SterilisationBox: Consumables that can be Sterlized checks `hasAbility(STERILISE)` and does not care the specific item providing such ability. Adding new items with similar or same ability does not require change in current class code, this adheres **Open-Closed Principle.**
 
 ---
-### 1.4 Flask behavior
+### 1.4 Flask consumption behavior
 
 **Requirements:** 
 - Flask stays in the backpack after depletion
 
-**Approach:** The `consumeBy()` in flask never calls inventory.remove(this) 
+**Approach:** Unlike `Apple` and `Cookies` the `consumeBy()` in flask never calls inventory.remove(this).
+
+**OOP principle:** Flask maintain's it's own behavior during consumption, this adheres to **Single Responsibility Principle**.
