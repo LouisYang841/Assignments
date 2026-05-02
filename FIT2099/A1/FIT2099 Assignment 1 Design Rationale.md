@@ -123,4 +123,6 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Requirement:** Weights 7, with 10 units of oil. 5% chance of leaking 1 unit of oil and creating a `Fire` on the ground each turn.
 
-**Approach:** The `Lantern` overrides `Item.tick(Location,Actor)` , spawn fire when it 
+**Approach:** The `Lantern` overrides `Item.tick(Location,Actor)` , spawn fire when it leaks and decrease the fuel counter by 1. The fuel and the probability of leaking is written as constructor parameters which allows further customization.
+
+**OOP principle**: The leak's logic is handled inside lantern, the Item manage its own logic, 
