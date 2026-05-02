@@ -26,10 +26,10 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **Alternative B:** Create `Consumable` interface that has method `consumedBy()` and `canBeConsumed()`. Both Flask and FirstAidKit implements it. The same kind of `ConsumeAction` handles all `Consumables` , call `consumedBy()` without refering exact class type. 
 
-|       | Pros                                                                                                     | Cons                                                                                                                       |
-| ----- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **A** | Actions are individual; Easy to understand                                                               | Action classes will multiply fast. Fails the purpose of the abstraction of `Action`.                                       |
-| **B** | new consumable items can Implement `Consumable`, and use same `ConsumeAction`, makes it easily extensive | Each concrete class must implement its own attribute initialisation; common logic cannot be shared at the interface level. |
+|       | Pros                                                                                                     | Cons                                                                                                                                                                             |
+| ----- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A** | Actions are individual; Easy to understand                                                               | Action classes will multiply fast. Fails the purpose of the abstraction of `Action`.                                                                                             |
+| **B** | new consumable items can Implement `Consumable`, and use same `ConsumeAction`, makes it easily extensive | Common attributes cannot be shared at the interface level, each implementing class must declare its own fields; similar logic repeated across classes cannot be extracted upward |
 
 **Justification:** Chose B. Two consumables in REQ1 already, and we have even more in REQ2 (Apple, Cookies, Puddles). It is inefficient to write a corresponding action for every Item. `ConsumeAction` achieves Polymorphism through `Consumable.consumedBy()` . New consumables requires only implementation instad changing code of the Action which adheres to **Open-Closed Principle**. Durability of Flask and cooldown of FirstAidKit is internal detail maintained by classes their own, which adheres to the **Single Responsibility Principle**.
 
@@ -238,10 +238,10 @@ Here is the trigger and consequences I choose.
 
 **Alternative C**: An abstract `AlarmConsequence` class representing the consequences, and Implemented as `LockdownConsequence` and `HuntdownConsequence` for specific alarm consequence logics. The `AlarmSystem` will register them and trigger them during the alarm.
 
-|       | Pros                                                                                                     | Cons                                                                                                               |
-| ----- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| **A** | No extra interfaces or classes; logic is centralised in one place                                        | AlarmSystem must know the internals of every responder type; new consequences requires modification in AlarmSystem |
-| B     | When there is new consequences, implement the `AlarmSubscriber` method on those responding to the alarm. | Interface introduces additional abstraction.                                                                       |
+|       | Pros                                                                                                     | Cons                                                                                                                                                                                           |
+| ----- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A** | No extra interfaces or classes; logic is centralised in one place                                        | AlarmSystem must know the internals of every responder type; new consequences requires modification in AlarmSystem                                                                             |
+| B     | When there is new consequences, implement the `AlarmSubscriber` method on those responding to the alarm. | The alarm-triggered behaviour is spread across multiple classes rather than visible in one place. New responders must remember to subscribe, forgetting registration leads to silent failures. |
 
 
 
