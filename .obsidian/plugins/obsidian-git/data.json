@@ -19,7 +19,7 @@
   "syncMethod": "merge",
   "mergeStrategy": "none",
   "customMessageOnAutoBackup": false,
-  "autoBackupAfterFileChange": true,
+  "autoBackupAfterFileChange": false,
   "treeStructure": false,
   "refreshSourceControl": true,
   "basePath": "",
@@ -43,7 +43,7 @@
   "lineAuthor": {
     "show": false,
     "followMovement": "inactive",
-    "authorDisplay": "initials",
+    "authorDisplay": "full",
     "showCommitHash": false,
     "dateTimeFormatOptions": "date",
     "dateTimeFormatCustomString": "YYYY-MM-DD HH:mm",
@@ -61,8 +61,8 @@
     },
     "textColorCss": "var(--text-muted)",
     "ignoreWhitespace": false,
-    "gutterSpacingFallbackLength": 5,
-    "lastShownAuthorDisplay": "initials",
+    "gutterSpacingFallbackLength": 16,
+    "lastShownAuthorDisplay": "full",
     "lastShownDateTimeFormatOptions": "date"
   }
 }

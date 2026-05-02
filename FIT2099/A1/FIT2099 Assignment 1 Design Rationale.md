@@ -49,6 +49,6 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 | **A** | Straight foward without additional mechanism                                                             | New door opening tools → must change all checks                                                             |
 | **B** | Item with same ability are abstracted into same tag, new item with the ability only needs to add the tag | Must handle the tags correctly during operations. Bugs in tags tends to be silent and harder for debugging. |
 
-**Justification:** Choose B. According to Dependency Inversion Principle, Door should not rely on specific kind of key to unlock it. Same applies to SterilisationBox: Consumables that can be Sterlized checks `hasAbility(STERILISE)` and does not care the specific item. Adding new items with similar or same ability does not require change in current class code, this adheres Open-Closed Principle.
+**Justification:** Choose B. According to Dependency Inversion Principle, Door should not rely on specific kind of key to unlock it. Same applies to SterilisationBox: Consumables that can be Sterlized checks `hasAbility(STERILISE)` and does not care the specific item providing such ability. Adding new items with similar or same ability does not require change in current class code, this adheres Open-Closed Principle.
 
 ---

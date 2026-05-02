@@ -235,13 +235,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "FIT2099/A1/FIT2099 Assignment 1 Design Rationale.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of conflict-files-obsidian-git"
+              "title": "Outline of FIT2099 Assignment 1 Design Rationale"
             }
           },
           {
@@ -273,7 +273,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7cfa5d50262a22bb",
+  "active": "32dce6286cd6eb79",
   "lastOpenFiles": [
     "FIT2099/A1/A1_REQ1_UML.drawio.svg",
     "FIT2099/A1/A1_REQ2_UML.drawio.svg",
