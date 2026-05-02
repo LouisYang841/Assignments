@@ -124,10 +124,12 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **OOP principle**: The leak's logic is handled inside lantern, the Item manage its own logic, this adheres to the **Single Responsibility Principle**. 
 
-### Fire -- Wrapper
+### 2.5 Fire -- Wrapper
 
 **Requirement:** A fire exists on ground for 5 turns, apply a stack of buring effect of actor on it each turn, and extinguish after that.
 
 **Approach:** `Fire` is considered a new subclass of `Ground`. It caches the original ground with `previousGround`, and restore the orginal ground when extinguished.
 
-**OOP principle:** `Fire` introduces the inflaming of ground as a wrapper around normal `Ground`s, current `Ground` subclasses does not require any change. This adheres the 
+**OOP principle:** `Fire` introduces the inflaming of ground as a wrapper around normal `Ground`s, current `Ground` subclasses does not require any change. This adheres the **Open Closed Principle**. Also this is not considered a decision since it is not really practical to maintain two states in each `Ground` subclass, the engine does not support it.
+
+### 2.6 Floppy Disk & CRT
