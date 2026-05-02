@@ -230,3 +230,4 @@ Here is the trigger and consequences I choose.
 ---
 ### 4.1 AlarmSystem -- Observer Pattern (Decision)
 
+**Requirement**: A robust and scalable alarm system that has two consequences when triggered
