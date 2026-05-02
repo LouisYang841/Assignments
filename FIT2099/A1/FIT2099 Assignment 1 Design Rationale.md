@@ -157,7 +157,7 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 **Alternative A**: write the logic procedurally inside the `playTurn()` of each creature.
 
 **Alternative B:** 
-- use a `TreeMap<Integer, Behaviour>` in every creature with a behaviour. 
+- use a `TreeMap<Integer, Behaviour>` in every creature with a behaviour to maintain priority between behaviors. 
 - Create behaviour classes such as `AttackNearbyBehavior` that implements `Behavior` and yield specific `Action` accrodingly. 
 - For undead, the `AttackNearbyBehavior` will be prioritzed over the `WanderBehavior`. 
 - For Slime, the `ConsumeBehaviour` will be prioritized over the `WanderBehaviour`. 
