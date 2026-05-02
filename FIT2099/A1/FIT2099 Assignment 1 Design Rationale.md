@@ -132,4 +132,8 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **OOP principle:** `Fire` introduces the inflaming of ground as a wrapper around normal `Ground`s, current `Ground` subclasses does not require any change. This adheres the **Open Closed Principle**. Also this is not considered a decision since it is not really practical to maintain two states in each `Ground` subclass, the engine does not support it.
 
-### 2.6 Floppy Disk & CRT
+### 2.6 Floppy Disk & CRT Monitor
+
+**Requirement:** `FloppyDisk` weights 1; `CRTMonitor` weights 30. Both Items has no specific use except being scrap that can be carried.
+
+**Approach:** Both extends `Item`, utilize `Statistics`
