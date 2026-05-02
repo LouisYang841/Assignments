@@ -150,4 +150,4 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **Requirement:** A hole `o` spawns an undead `Ѫ` or slime `⍾` every 20 turns.
 
-**Approach**: `SpawnHole` extends `Ground`, overriding `tick()` for turn 
+**Approach**: `SpawnHole` extends `Ground`, maintains an internal counter and overrides `Ground.tick()` to achieve cooldown. Spawning new creatures with `Location.addActor()` 
