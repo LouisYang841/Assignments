@@ -183,12 +183,12 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **OOP principles:** Adding new consumables in the future does not require changes in `ConsumeBehavior` , this adheres to the **Open-Closed Principle**.
 
-### 3.3 AttackNearbyBehavior and Faction
+### 3.3 AttackNearbyBehavior and Faction -- Faction Tag over `instanceof` (Decision)
 
 **Requirement:** 
 - This is a subsequent requirement due to previous decision in **3.1**.
-- An `AttackNearbyBehavior` for undead's player-only attacking behavior
-- Undead will only attack those who are players(workers).
+- Undead attacks only Workers, ignoring Slime and other creatures.
+- This behavior of undead has been abstracted into `AttackNearbyBeha`
 
 **Alternative A:**
 
