@@ -150,9 +150,11 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 ---
 
-### 3.1 Behaviour System
+### 3.1 Undead, Slime and Behaviour System (Decision)
 
 **Requirement:** Undead attacks any worker nearby. Slime consumes any consumables on ground. Both creatrues will wander when idle.
+
+G
 
 **Alternative A**: write the logic procedurally inside the `playTurn()` of each creature.
 
@@ -178,7 +180,9 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **Approach:** the `ConsumeBehaviour` utilize engine method `Location.getItemsAs(Consumable.class)` to filter consumables on the ground instead of invoking `instanceof`.
 
-**OOP principles:** Adding new consumables in the future does not require changes in `ConsumeBehavior` , this adheres to the **Open-Closed Principle**
+**OOP principles:** Adding new consumables in the future does not require changes in `ConsumeBehavior` , this adheres to the **Open-Closed Principle**.
+
+### 3.3 AttackNearbyBehavior
 
 
 ### 3.4 SpawnHole
