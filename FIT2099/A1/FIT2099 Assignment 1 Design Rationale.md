@@ -277,4 +277,4 @@ The `AlarmFloor` class:
 
 **Approach**: in `onAlarmTrigger()`, replace the `WanderBehaviour` in hostile creature's tree map with `FollowBehaviour(target=targetWorker)`. The hostile creatures maintains an internal timer and swap back to `WanderBehaviour` when the alarm ends.
 
-**Reason**: The tree map in REQ3 is exactly built for this. 
+**Reason**: The tree map in REQ3 is exactly built for this. Behaviours are encapsulated into classes, and allows hotswap. `Behaviour` manage the specific `Action`s, Undead manage the `Behaviour` to
