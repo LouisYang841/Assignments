@@ -254,6 +254,7 @@ Here is the trigger and consequences I choose.
 
 We acknowledge that **Alternative C** offers better composability if multiple alarm systems with different consequence combinations were required, since the `Consequence`s could recombine independently from responders. But the REQ4 only required single alarm system with 2 consequences. Under this scope, the **Alternative B** can satisfy the requirement without introducing an extra abstraction layer for a possible requirement that does not even currently exist. 
 
-### 4.1 AlarmFloor
+### 4.1 AlarmFloor -- Intentional Coupling
 
+**Requirement**: A hidden floor tile that triggers an alarm when a wo
 
