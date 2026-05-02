@@ -289,10 +289,10 @@ The `AlarmFloor` class:
 
 ## REQ4 SOLID Summary
 
-| Principle | Application in REQ4                                                                                                                                           |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **SRP**   | `AlarmSystem` only dispatches notifications; `Door` manages its own lockdown; `Undead` manages its own behaviour swap; `AlarmFloor` only detects and triggers |
-| **OCP**   | New trigger types implement `AlarmTrigger`; new subscribers implement `AlarmSubscriber`, neither requires changes to `AlarmSystem` or existing subscribers.   |
-| **LSP**   | `AlarmFloor` substitutes `Ground` transparently; `FollowBehaviour` substitutes `Behaviour` without breaking the TreeMap loop in REQ3                          |
-| **ISP**   | `AlarmTrigger` has only `monitor(Location)`; `AlarmSubscriber` has only `onAlarmTriggered()` ,                                                                |
-| **DIP**   | `AlarmSystem` depends on `AlarmTrigger` and `AlarmSubscriber` interfaces, not on concrete `AlarmFloor`, `Door`, or `Undead` classes                           |
+| Principle | Application in REQ4                                                                                                                                                                    |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **SRP**   | `AlarmSystem` only dispatches notifications; `Door` manages its own lockdown; `Undead` manages its own behaviour swap; `AlarmFloor` only detects and triggers                          |
+| **OCP**   | New trigger types implement `AlarmTrigger`; new subscribers implement `AlarmSubscriber`, neither requires changes to `AlarmSystem` or existing subscribers.                            |
+| **LSP**   | `AlarmFloor` substitutes `Ground` transparently; `FollowBehaviour` substitutes `Behaviour` without breaking the TreeMap loop in REQ3                                                   |
+| **ISP**   | `AlarmTrigger` has only `monitor(Location)`; `AlarmSubscriber` has only `onAlarmTriggered()` , no implementer is forced to implement empty methods                                     |
+| **DIP**   | `AlarmSystem` and `Door` both depend on `AlarmSubscriber`; `AlarmSystem` and `AlarmFloor` both depend on `AlarmTrigger` — high-level and low-level modules both depend on abstractions |
