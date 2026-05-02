@@ -128,4 +128,5 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Requirement:** A fire exists on ground for 5 turns, apply a stack of buring effect of actor on it each turn, and extinguish after that.
 
-**Approach:** `Fire` is considered a new subclass of `Ground`. It caches the original ground with `previousGround`
+**Approach:** `Fire` is considered a new subclass of `Ground`. It caches the original ground with `previousGround`, and restore the orginal ground when extinguished.
+
