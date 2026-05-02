@@ -5,13 +5,7 @@ affiliation: School of Science, Monash University Malaysia
 email: jyan0226@student.monash.edu
 date: 2026-05-03
 ---
-::: {align=center}
-**Research Note: A Kinematic Origin for Universal Scaling in Quantum Fluids**  
-Jiaxuan Yang  
-*School of Science, Monash University Malaysia*  
-`jyan0226@student.monash.edu`  
-Date: 2026-05-03
-:::
+
 
 ------------------------------------------------------------------------
 
