@@ -1,6 +1,6 @@
 ## REQ1 Basic Items and Ship
 
-REQ1 Setup the basic senario of workers and ship. Every worker spawns with an inventory limited to 50 units of weight and a Flask allow 5 consumptions. The ship is composed of wall `#`, floor `_`, and locked doors `=` . Three unique items can be found on the ship — AccessCard (unlock doors), FirstAidKit (heal with cooldown), and SterilisationBox (sterlize).
+REQ1 Setup the basic senario of workers and ship. Every worker spawns with an inventory limited to 50 units of weight and a Flask allow 5 consumptions. The ship is composed of wall `#`, floor `_`, and locked doors `=` . Three unique items can be found on the ship -- AccessCard (unlock doors), FirstAidKit (heal with cooldown), and SterilisationBox (sterlize).
 
 ![[A1_REQ1_UML.drawio.svg]]
 
@@ -9,7 +9,7 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **Requirement:** The inventory of workers have a weight limit of 50.
 
-**Solution:** Creates `WeightLimitedInventory` which extends `Inventory`, override `add()` to return `false` when overweighted. Items without `WEIGHT` will tirgger `IllegalArgumentException` — all Items that added to the `WeightLimitedInventory` must declare a weight.
+**Solution:** Creates `WeightLimitedInventory` which extends `Inventory`, override `add()` to return `false` when overweighted. Items without `WEIGHT` will tirgger `IllegalArgumentException` -- all Items that added to the `WeightLimitedInventory` must declare a weight.
 
 | Pros                                                                                                                                                                                     | Cons                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
@@ -17,7 +17,7 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 **OOP principle:** `WeightLimitedInventory` is a specific kind of `Inventory` that can be handled as  an `Inventory` , which adheres **Liskov Substituion Principle**
 
 ---
-### 1.2 Flask and FirstAidKit — Consumable Interface (Decision)
+### 1.2 Flask and FirstAidKit -- Consumable Interface (Decision)
 
 **Requirements:**
 - Flask: weights 3, can be consumed 5 times, heal 1 HP each. keep in inventory when depleted.
@@ -35,7 +35,7 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 **Justification:** Chose B. Two consumables in REQ1 already, and we have even more in REQ2 (Apple, Cookies, Puddles). It is inefficient to write a corresponding action for every Item. `ConsumeAction` achieves Polymorphism through `Consumable.consumedBy()` . New consumables requires only implementation instad changing code of the Action which adheres to **Open-Closed Principle**. Durability of Flask and cooldown of FirstAidKit is internal detail maintained by classes their own, which adheres to the **Single Responsibility Principle**.
 
 ---
-### 1.3 Door & SterilisationBox — Ability Tag over instanceof (Decision)
+### 1.3 Door & SterilisationBox -- Ability Tag over instanceof (Decision)
 
 **Requirements:**
 - There are locked doors on the ship (`=`); AccessCard can open any doors
@@ -93,4 +93,4 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 
 **Reason:** The logic inside every DoT effect are all "x damage per x turn" form. Instead of handling them separately, It is clearly more efficient to abstract them into a general status differentiated with an enum.
 
-### 2.2 
+### 2.2 Puddle -- Interface 
