@@ -11,10 +11,10 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 
 **Solution:** Creates `WeightLimitedInventory` which extends `Inventory`, override `add()` to return `false` when overweighted. Items without `WEIGHT` will tirgger `IllegalArgumentException` — all Items that added to the `WeightLimitedInventory` must declare a weight.
 
-| Pros                                                                                                                                          | Cons                          |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| utilized engine mechanise: `PickUpAction` automatically handles the situation where `add()` returning `false` and display the Error message;  | additional subclasses created |
-**OOP principle:** Rules are confined with its own Class which is an application of Single Responsibility Principle.
+| Pros                                                                                                                                                                                     | Cons                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| utilized engine mechanise: `PickUpAction` automatically handles the situation where `add()` returning `false` and display the Error message; Rules are encapsulated within its own class | additional subclasses created |
+**OOP principle:** `WeightLimitedInventory` is a specific kind of `Inventory` that can be handled as  an `Inventory` , which adheres **Liskov Substituion Principle**
 
 ---
 ### 1.2 Flask and FirstAidKit — Consumable Interface (Decision)
@@ -61,3 +61,5 @@ REQ1 Setup the basic senario of workers and ship. Every worker spawns with an in
 **Approach:** Unlike `Apple` and `Cookies` the `consumeBy()` in flask never calls inventory.remove(this).
 
 **OOP principle:** Flask maintain's it's own behavior during consumption, this adheres to **Single Responsibility Principle**.
+
+---
