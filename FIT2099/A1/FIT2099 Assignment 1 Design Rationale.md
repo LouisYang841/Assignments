@@ -254,8 +254,7 @@ Here is the trigger and consequences I choose.
 
 We acknowledge that **Alternative C** offers better composability if multiple alarm systems with different consequence combinations were required, since the `Consequence`s could recombine independently from responders. But the REQ4 only required single alarm system with 2 consequences. Under this scope, the **Alternative B** can satisfy the requirement without introducing an extra abstraction layer for a possible requirement that does not even currently exist. 
 
-
-
+If consequence types diverge in a future iteration, an enum based dispatch would allow subscribers to register for specific consequence types without the generics overhead. For the current single alarm with two fixed consequences, this is unnecessary but remains a clean refactoring path if requirements evolve.
 ### 4.2 AlarmFloor and AlarmTrigger -- Factory Method
 
 **Requirement**: A hidden floor tile that triggers an alarm when a worker stands on it, it must look the same as normal floors.
