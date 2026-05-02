@@ -88,4 +88,7 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 - Apple: poison player 1 dmg/turn for 5 turns when unsanitzied
 - Puddles: poison player 1 dmg/turn for 3 turns when unsanitzied
 - Fire: apply a burn effect 1 dmg/turn for 5 turns when and `Actor` stand on it.
-**Approach**: Create a `DamageOverTimeStatus` and `DamageOverTimeType` enum as arguments
+
+**Approach**: Create a `DamageOverTimeStatus` and `DamageOverTimeType` enum as constructor arguments.
+
+**Reason:** The logic inside every DoT effect are basically the same. Instead of writing them separately, It is easi
