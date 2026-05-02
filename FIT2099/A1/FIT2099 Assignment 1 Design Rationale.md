@@ -178,7 +178,8 @@ REQ3 introduces 2 new type of creatures, undead `Ѫ` and slime `⍾` , and a hol
 
 **Approach:** the `ConsumeBehaviour` utilize engine method `Location.getItemsAs(Consumable.class)` to filter consumables on the ground instead of invoking `instanceof`.
 
-**OOP principles:** Adding new consumables in the future does not require changes in `ConsumeBehavior`
+**OOP principles:** Adding new consumables in the future does not require changes in `ConsumeBehavior` , this adheres to the **Open-Closed Principle**
+
 
 ### 3.4 SpawnHole
 
