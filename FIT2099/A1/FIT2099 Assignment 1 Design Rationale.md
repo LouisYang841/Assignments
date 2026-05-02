@@ -275,4 +275,6 @@ The `AlarmFloor` class:
 
 **Requirement**: When an alarm is triggered, all hostile entites will stop wandering and directly move to the worker who triggered the alarm.
 
-**Approach**: in `onAlarmTrigger()`, replace the `WanderBehaviour` in hostile creature's tree map with `FollowBehaviour(target=targetWorker)`. The hostile creatures maintains an internal timer and swap back to `WanderBehaviour`
+**Approach**: in `onAlarmTrigger()`, replace the `WanderBehaviour` in hostile creature's tree map with `FollowBehaviour(target=targetWorker)`. The hostile creatures maintains an internal timer and swap back to `WanderBehaviour` when the alarm ends.
+
+**Reason**: The tree map in REQ3 is exactly built for this. 
