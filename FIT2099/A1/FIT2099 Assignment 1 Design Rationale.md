@@ -242,6 +242,7 @@ Here is the trigger and consequences I choose.
 | ----- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **A** | No extra interfaces or classes; logic is centralised in one place                                        | AlarmSystem must know the internals of every responder type; new consequences requires modification in AlarmSystem                                                                                                                                               |
 | B     | When there is new consequences, implement the `AlarmSubscriber` method on those responding to the alarm. | Alarm response logic is spread across subscriber classes rather than centralised; each responder type must remember to subscribe — a missed registration fails silently. Adding a new consequence type still requires modifying every relevant subscriber class. |
+|       |                                                                                                          |                                                                                                                                                                                                                                                                  |
 
 
 
