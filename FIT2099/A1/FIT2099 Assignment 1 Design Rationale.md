@@ -283,4 +283,6 @@ The `AlarmFloor` class:
 
 **Requirement**: When an alarm is triggered, all doors are locked down for certain duration.
 
-**Approach**: the `Door` maintains a `lockdownDur`
+**Approach**: the `Door` maintains a `lockdownDuration` counter that manage it's lockdown status.
+
+**Reason:** 
