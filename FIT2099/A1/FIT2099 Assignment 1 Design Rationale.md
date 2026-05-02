@@ -121,3 +121,6 @@ A Lantern that leaks oil and cause fire on grounds. The puddle can now be drinke
 - Both item does not directly interaction with `SterilizationBox`, only the abstract tags, future items with sterilization ability only needs to opt in through the abstraction layer, which adheres to **Dependency Inversion Principle**
 ### 2.4 Lantern
 
+**Requirement:** Weights 7, with 10 units of oil. 5% chance of leaking 1 unit of oil and creating a `Fire` on the ground each turn.
+
+**Approach:** R
